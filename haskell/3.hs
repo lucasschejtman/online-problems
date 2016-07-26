@@ -3,11 +3,8 @@
 	What is the largest prime factor of the number 600851475143 ?
 -}
 
-potentialPrimes = 2 : [3,5..]
-
-{- Need to optimize -}
 primes :: [Int]
-primes = primes' potentialPrimes where primes' (p:ps) = p : [x | x <- ps, mod x p /= 0]
+primes = primes' [2..] where primes' (n:ns) = n:(primes' $ filter (\ x -> rem x n /= 0) ns)
 
 solution :: Int -> [Int]
 solution n = factors n primes

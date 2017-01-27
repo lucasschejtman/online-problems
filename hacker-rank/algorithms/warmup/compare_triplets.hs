@@ -16,5 +16,5 @@ main = do
     let a0_t = map (read) $ words a0_temp
     b0_temp <- getLine
     let b0_t = map (read) $ words b0_temp
-    let res = solution a0_t b0_t (0,0)
-    putStrLn (show (fst res) ++ " " ++ show (snd res))
+    let (a, b) = solution a0_t b0_t (0,0)
+    putStrLn (show a ++ " " ++ show b)
